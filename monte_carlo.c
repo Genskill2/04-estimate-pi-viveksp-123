@@ -3,41 +3,39 @@
 #include <stdio.h>
 #include <math.h>
 
-float mc_pi(int n){
-  float x,y;
-  int i=0,circle=0;
-  float z;
-  int rectangle=0;
-  
-  float pi;
-  
-  while (i<n-1){
-   
-   x=frandom();
-   y=frandom();
-   z=x*x+y*y;
-  
-   
-   if(z<=1){
-     circle+=1;
-     square+=1;
-     }
-   else{
-     square+=1;
-   
-   i++;
-     
-   }
-   
-   }
- 
- pi=(float)4*circle/square;
- return pi;
-   
+float Wallis(int n)
+{
+
+    if n <= 0
+        return 0;
+
+    float pi = 1;
+
+    for (i=0;i<n+1;i++)
+    {
+
+        pi *= (4 * (i*i))/(4(i*i) - 1);
+    }
+    return pi*2;
     
-  
-  
 }
-  
+float MonteCarlo(int n):
+
+    if n <= 0
+        return 0;
+
+    int count = 0;
+
+    for (i=0;i<n;i++)
+    {
+
+        x = frandom();
+        y = frandom();
+
+        if x*x + y*y < 1
+            count += 1;
+    }
+    return 4*count/n;
+}
 
 
