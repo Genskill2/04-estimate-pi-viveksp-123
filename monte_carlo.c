@@ -7,7 +7,7 @@ float mc_pi(int n){
   float x,y;
   int i=0,circle=0;
   float z;
-  int square=0;
+  int rectangle=0;
   
   float pi;
   
